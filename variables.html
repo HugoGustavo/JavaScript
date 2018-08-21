@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <script type="text/javascript">
+            var name = "Ali";
+            var money;
+            money = 2000.50;
+        </script>
+    </head>
+    <body onload="checkScope();">
+        <script type="text/javascript">
+            var myVar = "global";
+            function checkScope(){
+                var myVar = "local";
+                document.write(myVar);
+            }
+        </script>
+
+    </body>
+</html>
