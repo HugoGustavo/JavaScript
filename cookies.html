@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <script type="text/javascript">
+            function WriteCookie(){
+                if ( document.myformWrite.customer.value == "" ){
+                    alert("Enter some value!");
+                    return;
+                }
+                cookieValue = escape(document.myformWrite.customer.value) + ";";
+                document.cookie = "name=" + cookieValue;
+                document.write("Setting Cookies: " + "name=" + cookieValue);
+            }
+
+            function ReadCookie(){
+                var allCookies = document.cookie;
+                document.write("All Cookies: " + allCookies);
+
+                cookieArray = allCookies.split(';');
+
+                for (var i = 0; i < cookieArray.length; i++){
+                    name = cookieArray[i].split('=')[0];
+                    value = cookieArray[i].split('=')[1];
+                    document.write("Key is: " + name + " and Value is: " + value);
+                }
+            }
+
+            function WriteExpires(){
+                var now = new Date();
+                now.setMonth( now.getMonth() + 1 );
+                cookieValue = escape(document.myFormExpires.customer.value) + ";";
+                document.cookie = "name=" + cookieValue;
+                document.cookie="expires=" + now.toUTCString() + ";";
+                document.write("Setting Cookies: " + "name=" + cookieValue);
+            }
+
+            function WriteDelete(){
+                var now = new Date();
+                now.setMonth(now.getMonth - 1);
+                cookieValue = escape(document.myFormDelete.customer.value) + ";";
+                document.cookie = "name=" + cookieValue;
+                document.cookie = "expires=" + now.toUTCString() + ";";
+                document.write("Setting cookies: " + "name=" + cookieValue);
+            }
+        </script>
+    </head>
+    <body>
+        <!--
+        <form name="myformWrite" action="">
+            Enter name: <input type="text" name="customer"/>
+            <input type="button" value="Set Cookie" onclick="WriteCookie();"/>
+        </form>
+        -->
+        <form name="myformRead" action="">
+            <p> Click the following button and see the result: </p>
+            <input type="button" value="Get Cookie" onclick="ReadCookie()"/>
+        </form>
+        <form name="myFormExpires" action="">
+            Enter name: <input type="text" name="customer"/>
+            <input type="button" value="Set Cookie" onclick="WriteExpires()"/>
+        </form>
+        <form name="myFormWrite" action="">
+            Enter name: <input type="text" name="customer"/>
+            <input type="button" value="Set Cookie" onclick="WriteDelete()"/>
+        </form>
+
+        <form name="myFormDelete" action="">
+            Enter name: <input type="text" name="customer"/>
+            <input type="button" value="Set Cookie" onclick="WriteDelete()"
+        </form>
+    </body>
+</html>
