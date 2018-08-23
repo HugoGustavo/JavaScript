@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <script type="text/javascript">
+            /*
+            var x = 1;
+            document.write("Entering the loop<br/>");
+            while( x < 20 ){
+                if ( x == 5 ){
+                    continue;
+                }
+                if ( x == 8 ){
+                    break;
+                }
+                x = x + 1;
+                document.write(x + "<br/>");
+            }
+            document.write("Exiting the loop!<br/>");
+
+            document.write("<br/><br/>");
+            document.write("Entering the loop!<br/>");
+            outerloop:
+            for (var i = 0; i < 5; i++){
+                document.write("Outerloop: " + i + "<br/>");
+                innerloop:
+                for(var j=0; j < 5; j++){
+                    if ( j > 3 ) break;
+                    if ( i == 2 ) break innerloop;
+                    if ( i == 4 ) break outerloop;
+                    document.write("Innerloop: " + j + "<br/>");
+                }
+            }
+            document.write("Exiting the loop!<br/>");
+            document.write("Exiting the loop!<br/>");
+            */
+
+            document.write("Entering the loop!<br/>");
+            outerloop:
+            for ( var i = 0; i < 3; i++){
+                document.write("Outerloop: " + i + "<br/>");
+                for ( var j = 0; j < 5; j++){
+                    if( j == 3 ){
+                        continue outerloop;
+                    }
+                    document.write("Innerloop: " + j + "<br/>");
+                }
+            }
+            document.write("Exiting the loop!<br/>");
+        </script>    
+    </head>
+    <body>
+        <p>Set the variable to different value and then try...</p>
+    </body>
+</html>
