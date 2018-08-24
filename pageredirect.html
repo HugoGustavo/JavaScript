@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <script type="text/javascript">
+            function redirect(){
+                window.location="http://www.tutorialspoint.com";
+            }
+
+            document.write("You will be redirect to main page in 3 sec.");
+            setTimeout('redirect()', 3000);
+
+            var browserName = navigator.appName;
+            if ( browserName == "Netscape" ){
+                window.location = "http://www.localtion.com/ns.html";
+            } else if ( browserName == "Microsoft Internet Explorer" ) {
+                window.location = "htttp://www.location.com/ie.html";
+            } else {
+                window.location = "http://www.location.com/other.html";
+            }
+        </script>
+    </head>
+    <body>
+        <p>Click the following button, you will be redirect to home page.</p>
+        <form>
+            <input type="button" value="Redirect Me" onclick="redirect();">
+        </form>
+    </body>
+</html>
