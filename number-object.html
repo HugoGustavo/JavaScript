@@ -1,0 +1,114 @@
+<html>
+    <head>
+        <script type="text/javascript">
+            var lineBreak = "<br/><br/>"
+            function book(title, author){
+                this.title = title;
+                this.author = author;
+            }
+
+            function showValue(){
+                var val = Number.MAX_VALUE;
+                document.write("Value of Number.MAX_VALUE: " + val);
+
+                document.write(lineBreak);
+                val = Number.MIN_VALUE;
+                document.write("Value of Number.MIN_VALUE: " + val);
+                
+                document.write(lineBreak);
+                var dayOfMonth = 50;
+                if ( dayOfMonth < 1 || dayOfMonth > 31){
+                    dayOfMonth = Number.NaN;
+                    document.write("Day of Month must be between 1 and 31.<br/>");
+                }
+                document.write("Value of dayOfMonth: " + dayOfMonth);
+                
+                
+                document.write(lineBreak);
+                var smallNumber = (-Number.MAX_VALUE)*2;
+                if ( smallNumber == Number.NEGATIVE_INFINITY ){
+                    document.write("Value of smaller: " + smallNumber + "<br/>");
+                }
+                document.write(lineBreak);
+
+                var bigNumber = Number.MAX_VALUE * 2;
+                if ( bigNumber == Number.POSITIVE_INFINITY ){
+                    document.write("Value if big number: " + bigNumber + "<br/>");
+                }
+                document.write(lineBreak);
+
+                var myBook = new book("Perl", "Mohtashim");
+                book.prototype.price = null;
+                myBook.price = 100;
+
+                document.write("Book title is: " + myBook.title + "<br/>");
+                document.write("Book author is: " + myBook.author + "<br/>");
+                document.write("Book price is: " + myBook.price + "<br/>");
+                document.write(lineBreak);
+
+                var num = new Number(177.1234);
+                document.write("num.constructor() is : " + num.constructor);
+                document.write(lineBreak);
+
+                var num = 77.1234;
+                var val = num.toExponential();
+                document.write("num.toExponential() is : " + val);
+                document.write("<br/>");
+                val = num.toExponential(4);
+                document.write("num.toExponential(4) is: " + val);
+                document.write("<br/>");
+
+                val = num.toExponential(2);
+                document.write("num.toExponential(2) is: " + val);
+                document.write("<br/>");
+
+                val = 77.1234.toExponential();
+                document.write("num.toExponential(2) is : " + val);
+                document.write("<br/>");
+
+                val = 77.1234.toExponential();
+                document.write("77.toExponencial is: " + val);
+                document.write(lineBreak);
+
+                var num = 177.1234;
+                document.write("num.toFixed() is: " + num.toFixed());
+                document.write("<br/>");
+
+                document.write("num.toFixed(6) is : " + num.toFixed(6));
+                document.write("<br/>");
+
+                document.write("num.toFixed(1) is: " + num.toFixed(1));
+                document.write("<br/>");
+                
+                document.write("(1.23e+20).toFixed(2) is: " +  (1.23e+20).toFixed(2));
+                document.write("<br/>");
+                document.write("(1.23e-10).toFixed(2) is: " + (1.23e-10).toFixed(2));
+                document.write(lineBreak);
+
+                num = new Number(177.1234);
+                document.write(num.toLocaleString());
+                document.write(lineBreak);
+
+                num = new Number(7.123456);
+                document.write("num.toPrecision() is " + num.toPrecision());
+                document.write("<br/>");
+                document.write("num.toPrecision(4) is " + num.toPrecision(4));
+                document.write("<br/>");
+                document.write("num.toPrecision(2) is " + num.toPrecision(2));
+                document.write("<br/>");
+                document.write("num.toPrecision(1) is " + num.toPrecision(1));
+                document.write(lineBreak);
+
+                num = new Number(15.11234);
+                document.write("num.valueOf() is " + num.valueOf());
+                document.write(lineBreak);
+            }
+        </script>
+    </head>
+    <body>
+        <p>Click the following to see the result: </p>
+        <form>
+            <input type="button" value="Click Me" onclick="showValue();">
+        </form>
+    </body>
+</html>
