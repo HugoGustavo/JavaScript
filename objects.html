@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <title>User-defined objects</title>
+        <script type="text/javascript">
+            var book = new Object();
+            book.subject = "Perl";
+            book.author = "Mohtashim";
+
+            function addPrice(amount){
+                with(this){
+                    price = amount;
+                }
+            }
+
+            function booki(title, author){
+                this.title = title;
+                this.author = author;
+                this.price = 0;
+                this.addPrice = addPrice;
+            }
+
+        </script>
+    </head>
+    <body>
+        <script type="text/javascript">
+            document.write("Book name is  : " + book.subject + "<br/>");
+            document.write("Book author is: " + book.author + "<br/>");
+
+            document.write("<br/><br/>");
+
+            var myBook = new booki("Perl", "Mohtashim");
+            document.write("Book title is : " + myBook.title + "<br/>");
+            document.write("Book author is: " + myBook.author + "<br/>");
+
+            document.write("<br/><br/>");
+
+            myBook.addPrice(100);
+            document.write("Book title is : " + myBook.title + "<br/>");
+            document.write("Book author is: " + myBook.author + "<br/>");
+            document.write("Book price is : " + myBook.price + "<br/>");
+        </script>
+    </body>
+</html>
