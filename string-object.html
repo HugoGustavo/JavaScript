@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title> String Objects </title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            var lineBreak = "<br/><br/>";
+
+            var str = new String("This is string");
+            document.write("str.constructor is: " + str.constructor);
+            document.write(lineBreak);
+
+            document.write("str.length is: " + str.length);
+            document.write(lineBreak);
+
+            function book(title, author){
+                this.title = title;
+                this.author = author;
+            }
+            var myBook = new book("Perl", "Mohtashim");
+            book.prototype.price = null;
+            myBook.price = 100;
+            document.write("Book title is: " + myBook.title + "<br/>");
+            document.write("Book author is: " + myBook.author + "<br/>");
+            document.write("Book price is: " + myBook.price + "<br/>");
+            document.write(lineBreak);
+
+            document.writeln("str.charAt(0) is: " + str.charAt(0) + "<br/>");
+            document.writeln("str.charAt(1) is: " + str.charAt(1) + "<br/>");
+            document.writeln("str.charAt(2) is: " + str.charAt(2) + "<br/>");
+            document.writeln("str.charAt(3) is: " + str.charAt(3) + "<br/>");
+            document.writeln("str.charAt(4) is: " + str.charAt(4) + "<br/>");
+            document.writeln("str.charAt(5) is: " + str.charAt(5) + "<br/>");
+            document.write(lineBreak);
+
+            document.write("str.charCodeAt(0) is: " + str.charCodeAt(0) + "<br/>");
+            document.write("str.charCodeAt(1) is: " + str.charCodeAt(1) + "<br/>");
+            document.write("str.charCodeAt(2) is: " + str.charCodeAt(2) + "<br/>");
+            document.write("str.charCodeAt(3) is: " + str.charCodeAt(3) + "<br/>");
+            document.write("str.charCodeAt(4) is: " + str.charCodeAt(4) + "<br/>");
+            document.write("str.charCodeAt(5) is: " + str.charCodeAt(5) + "<br/>");
+            document.write(lineBreak);
+
+            var str1 = new String("This is string one");
+            var str2 = new String("This is string two");
+            var str3 = str1.concat(str2);
+
+            document.write("Concatenated String: " + str3);
+        </script>
+    </body>
+</html>
