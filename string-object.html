@@ -44,8 +44,141 @@
             var str1 = new String("This is string one");
             var str2 = new String("This is string two");
             var str3 = str1.concat(str2);
+            document.write("Concatenated String: " + str3 + "<br/>");
+            document.write(lineBreak);
 
-            document.write("Concatenated String: " + str3);
+            str1 = new String("This is string one");
+            var index = str1.indexOf("string");
+            document.write("indexOf found String: " + index + "<br/>");
+            index = str1.indexOf("one");
+            document.write("indexOf found String: " + index + "<br/>");
+            document.write(lineBreak);
+
+            var str1 = new String("This is string one and again string");
+            var index = str1.lastIndexOf("string");
+            document.write("lastIndexOf found String: " + index + "<br/>");
+            var index = str1.lastIndexOf("one");
+            document.write("lastIndexOf found String: " + index + "<br/>");
+            document.write(lineBreak);
+
+            str1 = new String("This is beautiful string");
+            index = str1.localeCompare("XYZ");
+            document.write("localeCompare first: " + index + "<br/>");
+            index = str1.localeCompare("AbCD ?");
+            document.write("localeCompare second: " + index + "<br/>");
+            document.write(lineBreak);
+
+            var str = "For more information, see Chapter 3.4.5.1";
+            var re = /(chapter \d+(\.\d)*)/i;
+            var found = str.match(re);
+            document.write(found);
+            document.write(lineBreak);
+
+            var re = /apples/gi;
+            var str = "Apples are round, and apples are juicy";
+            var newstr = str.replace(re, "oranges");
+            document.write(newstr);
+            document.write(lineBreak);
+            var re = /(\w+)\s(\w+)/;
+            var str = "zara ali";
+            var newstr = str.replace(re, "$2", "$1");
+            document.write(newstr);
+            document.write(lineBreak);
+
+            var re = /apple/gi;
+            var str = "Apples are round, and apple are juicy.";
+            if ( str.search(re) == -1 ){
+                document.write("Does not contain Apples");
+            } else {
+                document.write("Contains Apples");
+            }
+            document.write(lineBreak);
+
+            var str = "Apples are round, and apples are juicy.";
+            var sliced = str.slice(3, -2);
+            document.write(sliced);
+            document.write(lineBreak);
+
+            var str = "Apples are round, and apples are juicy.";
+            var splitted = str.split(" ", 3);
+            document.write(splitted);
+            document.write(lineBreak);
+
+            var str = "Apples are round, and apples are juicy.";
+            document.write("(1,2)  : " + str.substr(1,2) + "<br/>");
+            document.write("(-2,2) : " + str.substr(-2,2) + "<br/>");
+            document.write("(-20,2): " + str.substr(-20,2) + "<br/>");
+            document.write("(20,2) : " + str.substr(20,2) + "<br/>");
+            document.write(lineBreak);
+
+            var str = "APPLES ARE ROUND, AND APPLES ARE JUICY.";
+            document.write(str.toLocaleLowerCase());
+            document.write(lineBreak);
+
+            var str = "APPLES ARE ROUND, AND APPLES ARE JUICY";
+            document.write(str.toLowerCase());
+            document.write(lineBreak);
+
+            var str = "apples are round, and apples are juicy."
+            document.write(str.toUpperCase());
+            document.write(lineBreak);
+
+            var str = new String("Hello World");
+            document.write(str.valueOf());
+            document.write(lineBreak);
+
+            var str = new String("Hello World");
+            document.write(str.anchor("myanchor"));
+            document.write(lineBreak);
+
+            var str = new String("Hello World");
+            document.write(str.big());
+            document.write(lineBreak);
+
+            var str = new String("Hello World");
+            document.write(str.blink());
+            document.write(lineBreak);
+
+            var str = new String("Hello World");
+            document.write(str.bold());
+            document.write(lineBreak);
+
+            var str = new String("Hello World");
+            document.write(str.fixed());
+            document.write(lineBreak);
+
+            var str = new String("Hello World");
+            document.write(str.fontcolor("red"));
+            document.write(lineBreak);
+
+            var str = new String("Hello World");
+            document.write(str.fontsize(3));
+            document.write(lineBreak);
+
+            var str = new String("Hello World");
+            document.write(str.italics());
+            document.write(lineBreak);
+
+            var str = new String("Hello World");
+            var URL = "http://tutorialspoint.com";
+            document.write(str.link(URL));
+            document.write(lineBreak);
+
+            var str = new String("Hello World");
+            document.write(str.small());
+            document.write(lineBreak);
+
+            var str = new String("Hello World");
+            document.write(str.strike());
+            document.write(lineBreak);
+
+            var str = new String("Hello World");
+            document.write(str.sub());
+            document.write(lineBreak);
+
+            var str = new String("Hello World");
+            document.write(str.sup());
+            document.write(lineBreak);
         </script>
     </body>
 </html>
