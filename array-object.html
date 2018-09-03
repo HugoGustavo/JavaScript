@@ -1,0 +1,113 @@
+<html>
+    <head>
+        <title> JavaScript Array constructor Porperty </title>
+        <script type="text/javascript">
+            var lineBreak = "<br/><br/>";
+    
+            var arr = new Array(10,20,30);
+            document.write("Arr.constructor is: " + arr.constructor);
+            document.write(lineBreak);
+
+            var arr = new Array(10,20,30);
+            document.write("Arr.length is: " + arr.length);
+            document.write(lineBreak);
+
+            var alpha = ["a", "b", "c"];
+            var numeric = [1,2,3];
+            var alphaNumeric = alpha.concat(numeric);
+            document.write("alphaNumeric: " + alphaNumeric);
+            document.write(lineBreak);
+
+            if (!Array.prototype.every){
+                Array.prototype.every = function(fun){
+                    var len = this.length;
+                    if ( typeof fun != "function" ){
+                        throw new TypeErro();
+                    }
+
+                    var thisp = arguments[1];
+                    for (var i = 0; i < len; i++){
+                        if ( i in this && !fun.call(thisp, this[i], i, this))
+                            return false;
+                    }
+                    return true;
+                };
+            }
+
+            function isBigEnough(element, index, array){
+                return( element >= 10 );
+            }
+
+            var passed = [12,5,8,130,44].every(isBigEnough);
+            document.write("First Test Value: " + passed + "<br/>");
+            var passed = [12,54,18,130,44].every(isBigEnough);
+            document.write("Second Test Value: " + passed + "<br/>");
+            document.write(lineBreak);
+
+            var arr = new Array("First", "Second", "Third");
+            var str = arr.join();
+            document.write("str: " + str + "<br/>");
+            var str = arr.join(", ");
+            document.write("str: " + str + "<br/>");
+            var str = arr.join(" + ");
+            document.write("str: " + str + "<br/>");
+            document.write(lineBreak);
+
+            var numbers = [1,4,9];
+            var element = numbers.pop();
+            document.write("element is: " + element + "<br/>");
+
+            var element = numbers.pop();
+            document.write("element is: " + element + "<br/>");
+            document.write(lineBreak);
+
+            var numbers = new Array(1,4,9);
+            var length = numbers.push(10);
+            document.write("new numbers is: " + numbers + "<br/>");
+            length = numbers.push(20);
+            document.write("new numbers is: " + numbers + "<br/>");
+            document.write(lineBreak);
+
+            var arr = [0,1,2,3].reverse();
+            document.write("Reversed array is: " + arr + "<br/>");
+            document.write(lineBreak);
+
+            var element = [105,1,2,3].shift();
+            document.write("Removed element is: " + element + "<br/>");
+            document.write(lineBreak);
+
+            var arr = ["orange", "mango", "banana", "sugar", "tea"];
+            document.write("arr.slice(1,2): " + arr.slice(1,2) + "<br/>");
+            document.write("arr.slice(1,3): " + arr.slice(1,3) + "<br/>");
+            document.write(lineBreak);
+
+            var arr = new Array("orange", "mango", "banana", "sugar");
+            var sorted = arr.sort();
+            document.write("Returned string is: " + sorted + "<br/>");
+            document.write(lineBreak);
+
+            var arr = ["orange", "mango", "banana", "sugar", "tea"];
+            var removed = arr.splice(2, 0, "water");
+            document.write("After adding 1: " + arr + "<br/>");
+            document.write("Removed is: " + removed + "<br/>");
+            document.write(lineBreak);
+            removed = arr.splice(3,1);
+            document.write("After adding 1: " + arr + "<br/>");
+            document.write("Removed is: " + removed + "<br/>");
+            document.write(lineBreak);
+
+            var arr = new Array("orange", "mango", "banana", "sugar");
+            var str = arr.toString();
+            document.write("Returned string is: " + str + "<br/>");
+            document.write(lineBreak);
+
+            var arr = new Array("orange", "mango", "banana", "sugar");
+            var length = arr.unshift("water");
+            document.write("Returned array is: " + arr + "<br/>");
+            document.write("Length of the array is: " + length + "<br/>");
+            document.write(lineBreak);
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
